@@ -10,7 +10,8 @@ consumption <- read.csv.sql('./data/household_power_consumption.txt',
 consumption <- consumption%>%
   mutate(DateTime = as.POSIXct(dmy(Date) + hms(Time)))
 
-# 
+# setup
+png("plot4.png", width=480, height=480)
 par(mfcol = c(2,2))
 
 # plot 1
@@ -37,19 +38,7 @@ for(i in 1:3) {
         col = line_color[i])
 }
 
-legend <- legend("topright",
-                 plot = FALSE)
-
-leftx <- legend$rect$left * 0.99994
-rightx <- (legend$rect$left + legend$rect$w)
-topy <- legend$rect$top
-bottomy <- (legend$rect$top - legend$rect$h) * 0.65
-
-legend(x = c(leftx, rightx), y = c(topy, bottomy),
-       legend = names(consumption[7:9]), 
-       lty = 1, 
-       col = line_color,
-       bty = 'n')
+legend("topright", names(consumption[7:9]), lty=1, lwd=2, col=line_color)
 
 # plot 3
 plot(consumption$DateTime, 
@@ -66,5 +55,5 @@ plot(consumption$DateTime,
      xlab = 'datetime')
 
 # export the graph
-dev.print(png, file='plot4.png',height=480,width=480)
+#dev.print(png, file='plot4.png',height=480,width=480)
 dev.off()

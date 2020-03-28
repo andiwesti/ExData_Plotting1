@@ -11,6 +11,8 @@ consumption <- consumption%>%
   mutate(DateTime = as.POSIXct(dmy(Date) + hms(Time)))
 
 # plot the graph
+png("plot3.png", width=480, height=480)
+
 plot(consumption$DateTime, 
      consumption$Global_active_power, 
      type = "n",
@@ -27,19 +29,6 @@ for(i in 1:3) {
         col = line_color[i])
 }
 
-legend <- legend("topright",
-              plot = FALSE)
+legend("topright", names(consumption[7:9]), lty=1, lwd=2, col=line_color)
 
-leftx <- legend$rect$left * 0.99998
-rightx <- (legend$rect$left + legend$rect$w)
-topy <- legend$rect$top
-bottomy <- (legend$rect$top - legend$rect$h)
-
-legend(x = c(leftx, rightx), y = c(topy, bottomy),
-       legend = names(consumption[7:9]), 
-       lty = 1, 
-       col = line_color)
-
-# export the graph
-dev.print(png, file='plot3.png',height=480,width=480)
 dev.off()
