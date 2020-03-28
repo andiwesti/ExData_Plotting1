@@ -18,5 +18,5 @@ plot(consumption$DateTime,
      xlab = '')
 
 # export the graph
-dev.print(png, file='./figure/plot2.png',height=480,width=480)
+dev.print(png, file='plot2.png',height=480,width=480)
 dev.off()
