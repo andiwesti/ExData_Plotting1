@@ -1,24 +1,24 @@
 ## Assignment week 1
 
-These are the plots that I have prepared. Plots are in the figure folder.
+My plots
 
 ### Plot 1
 
 
-![](figure/plot1.png) 
+![](plot1.png) 
 
 
 ### Plot 2
 
-![](figure/plot2.png) 
+![](plot2.png) 
 
 
 ### Plot 3
 
-![](figure/plot3.png) 
+![](plot3.png) 
 
 
 ### Plot 4
 
-![](figure/plot4.png) 
+![](plot4.png) 
 
